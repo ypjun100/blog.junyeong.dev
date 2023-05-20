@@ -19,16 +19,29 @@ body {
 }
 
 #topbar-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 3px;
+
+    a {
+        color: var(--text-color);
+        text-decoration: none;
+    }
 }
 
 #topbar-wrapper {
     height: 3.5rem;
     left: 0;
 
-    a {
+    span:first-child > a {
         color: var(--text-color);
+    }
+
+    span > .selected {
+        color: var(--text-color);
+    }
+
+    span > a {
+        color: var(--text-muted-color);
     }
 }
 
@@ -42,7 +55,12 @@ body {
 }
 
 #topbar #breadcrumb {
-    font-weight: 600;
+    font-weight: 500;
+
+    span:not(:last-child)::after {
+        content: "";
+        padding: 0;
+    }
 }
 
 #search-wrapper {
@@ -146,16 +164,19 @@ body {
     background: #8e8e8e08;
 }
 
-#toc-wrapper ul {
-    font-size: .9rem;
+#toc-wrapper {
+    top: 6rem;
+
+    ul {
+        font-size: .9rem;
+    }
+    .panel-heading {
+        display: none;
+    }
 }
 
 #panel-wrapper {
     padding-left: 0 !important;
-}
-
-#toc-wrapper .panel-heading {
-    display: none;
 }
 
 footer {

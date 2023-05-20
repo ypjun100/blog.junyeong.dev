@@ -1,6 +1,6 @@
 <!-- The Top Bar -->
 
-<div id="topbar-wrapper">
+<div id="topbar-wrapper" style="top: 0;">
     <div
       id="topbar"
       class="container d-flex align-items-center justify-content-between h-100 px-3 px-md-4 px-xxl-5"
@@ -8,35 +8,22 @@
       <span id="breadcrumb">
         {% assign paths = page.url | split: '/' %}
   
-        {% if paths.size == 0 or page.layout == 'home' %}
-          <!-- index page -->
-          <span><a href="#">윤준영, 더불어 성장 하는 개발자</a></span>
-  
+        {% if page.layout == 'home' %}
+          <span><a href="#">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/categories/">카테고리</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/tags/">태그</a></span>
+        {% elsif page.layout == 'categories' %}
+          <span><a href="/">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="#" class="selected">카테고리</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/tags/">태그</a></span>
+        {% elsif page.layout == 'tags' %}
+          <span><a href="/">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/categories/">카테고리</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="#" class="selected">태그</a></span>
         {% else %}
-            <span><a href="/">홈 아님</a></span>
-          <!-- {% for item in paths %}
-            {% if forloop.first %}
-              <span>
-                <a href="{{ '/' | relative_url }}">
-                  {{ site.data.locales[include.lang].tabs.home | capitalize }}
-                </a>
-              </span>
-  
-            {% elsif forloop.last %}
-              {% if page.collection == 'tabs' %}
-                <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
-              {% else %}
-                <span>{{ page.title }}</span>
-              {% endif %}
-  
-            {% elsif page.layout == 'category' or page.layout == 'tag' %}
-              <span>
-                <a href="{{ item | relative_url }}">
-                  {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
-                </a>
-              </span>
-            {% endif %}
-          {% endfor %} -->
+          <span><a href="/">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/categories/">카테고리</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/tags/">태그</a></span>
         {% endif %}
       </span>
       <!-- endof #breadcrumb -->
@@ -44,14 +31,7 @@
       <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
   
       <div id="topbar-title">
-        {% if page.layout == 'home' %}
-          {{- site.data.locales[include.lang].title | default: site.title -}}
-        {% elsif page.collection == 'tabs' or page.layout == 'page' %}
-          {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
-          {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}
-        {% else %}
-          {{- site.data.locales[include.lang].layout[page.layout] | default: page.layout | capitalize -}}
-        {% endif %}
+        <a href="/">윤준영, 더불어 성장 하는 개발자</a>
       </div>
   
       <i id="search-trigger" class="fas fa-search fa-fw"></i>
