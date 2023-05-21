@@ -18,12 +18,12 @@ timezone: ko-KR
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: 윤준영 # the main title
+title: 윤준영, 더불어 성장하는 개발자 # the main title
 
 tagline: 더불어 성장하는 개발자 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  윤준영, 더불어 성장하는 개발자
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://blog.junyoung.dev"
@@ -80,7 +80,7 @@ theme_mode: dark # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: /assets/img/profile.jpeg
+avatar:
 
 # boolean type, the global switch for TOC in posts.
 toc: true

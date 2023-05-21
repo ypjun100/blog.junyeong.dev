@@ -9,19 +9,19 @@
         {% assign paths = page.url | split: '/' %}
   
         {% if page.layout == 'home' %}
-          <span><a href="#">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="#">윤준영, 더불어 성장하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="/categories/">카테고리</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="/tags/">태그</a></span>
         {% elsif page.layout == 'categories' %}
-          <span><a href="/">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/">윤준영, 더불어 성장하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="#" class="selected">카테고리</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="/tags/">태그</a></span>
         {% elsif page.layout == 'tags' %}
-          <span><a href="/">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/">윤준영, 더불어 성장하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="/categories/">카테고리</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="#" class="selected">태그</a></span>
         {% else %}
-          <span><a href="/">윤준영, 더불어 성장 하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
+          <span><a href="/">윤준영, 더불어 성장하는 개발자</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="/categories/">카테고리</a></span>&nbsp;&nbsp;&nbsp;
           <span><a href="/tags/">태그</a></span>
         {% endif %}
@@ -31,10 +31,11 @@
       <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
   
       <div id="topbar-title-custom">
-        <a href="/">윤준영, 더불어 성장 하는 개발자</a>
+        <a href="/">윤준영, 더불어 성장하는 개발자</a>
       </div>
   
       <i id="search-trigger" class="fas fa-search fa-fw"></i>
+      <span id="search-cancel"><i class="fas fa-xmark"></i></span>
       <span id="search-wrapper" class="align-items-center">
         <i class="fas fa-search fa-fw"></i>
         <input
@@ -46,6 +47,5 @@
           placeholder="검색"
         >
       </span>
-      <span id="search-cancel">취소</span>
     </div>
   </div>

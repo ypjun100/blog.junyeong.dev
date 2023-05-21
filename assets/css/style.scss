@@ -3,7 +3,7 @@
 
 @import '{{ site.theme }}';
 
-$tab-count: 4; /* backward compatible (version <= 4.0.2) */
+$tab-count: 3; /* backward compatible (version <= 4.0.2) */
 $tab-height: 3rem;
 $tab-cursor-height: 1.6rem;
 $cursor-width: 2px; /* the cursor width of the selected tab */
@@ -22,19 +22,6 @@ body {
     font-family: ui-sans-serif,system-ui,apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,"Apple Color Emoji",Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
 }
 
-#topbar-title-custom {
-    font-size: 1.1rem;
-    margin-top: 3px;
-    font-weight: 600;
-    font-family: sans-serif;
-    text-align: center;
-
-    a {
-        color: var(--text-color);
-        text-decoration: none;
-    }
-}
-
 #topbar-wrapper {
     height: 3.5rem;
     left: 0;
@@ -49,6 +36,30 @@ body {
 
     span > a {
         color: var(--text-muted-color);
+    }
+}
+
+#topbar {
+    .unloaded + #topbar-title-custom {
+        display: none;
+    }
+
+    #search-cancel {
+        margin-left: 1vw;
+        font-size: 15pt;
+    }
+}
+
+#topbar-title-custom {
+    font-size: 1.1rem;
+    margin-top: 3px;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-align: center;
+
+    a {
+        color: var(--text-color);
+        text-decoration: none;
     }
 }
 
@@ -74,6 +85,17 @@ body {
     height: 2.3rem;
     border-radius: 10px;
     width: 92%;
+}
+
+.card-body {
+    a {
+        color: var(--text-muted-color);
+        border-bottom: none !important;
+        font-size: 1.2rem;
+    }
+    a:hover {
+        color: var(--text-color);
+    }
 }
 
 .card-text {
@@ -166,14 +188,41 @@ body {
     } /* ul */
 }
 
-#post-list .post-preview {
-    border: 1px solid rgb(122 122 122 / 10%);
-    background: #8e8e8e08;
+#post-list {
+    .post-preview {
+        border: 1px solid rgb(122 122 122 / 10%);
+        background: #8e8e8e08;
 
-    h1 {
-        font-size: 1.2rem;
+        h1 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .post-preview:hover {
+        background: #3a3a3a4f;
+    }
+
+    .introduction {
+        margin-bottom: 0 !important;
+    }
+
+    .introduction:hover {
+        background: #8e8e8e08 !important;
+    }
+
+    hr {
+        margin: 1.75rem 0;
     }
 }
+
+// #post-list .post-preview {
+//     border: 1px solid rgb(122 122 122 / 10%);
+//     background: #8e8e8e08;
+
+//     h1 {
+//         font-size: 1.2rem;
+//     }
+// }
 
 .post-content {
     font-size: 1rem;
