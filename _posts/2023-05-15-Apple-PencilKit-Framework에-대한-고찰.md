@@ -1,8 +1,15 @@
 ---
 title: Apple PencilKit Framework에 대한 고찰
 date: 2023-05-14 20:55:00 +0800
-categories: [고찰시리즈]
-tags: [고찰, Swift]
+categories: [고찰시리즈, Apple OS]
+tags: [Swift]
+pin: false
+math: false
+mermaid: false
+image:
+  path: https://velog.velcdn.com/images/ypjun100/post/d777e8f7-6aef-4e12-b371-dccafc89370b/image.png
+  lqip:
+  alt:
 ---
 
 #### 요약
@@ -49,4 +56,4 @@ PencilKit의 [PKCanvasViewDelegate를 소개하는 문서](https://developer.app
 
 
 ---
-**References** <br>- https://developer.apple.com/videos/play/wwdc2019/221/<br>- https://developer.apple.com/documentation/uikit/pencil_interactions/handling_input_from_apple_pencil<br>- https://haningya.tistory.com/305<br>- https://blog.mathpresso.com/ios-pencilkit을-활용한-drawing-노트-개발기-d50019d42041
+**References** <br>[https://developer.apple.com/videos/play/wwdc2019/221/](https://developer.apple.com/videos/play/wwdc2019/221/)<br>[https://developer.apple.com/documentation/uikit/pencil_interactions/handling_input_from_apple_pencil](https://developer.apple.com/documentation/uikit/pencil_interactions/handling_input_from_apple_pencil)<br>[https://haningya.tistory.com/305](https://haningya.tistory.com/305)<br>[https://blog.mathpresso.com/ios-pencilkit을-활용한-drawing-노트-개발기-d50019d42041](https://blog.mathpresso.com/ios-pencilkit을-활용한-drawing-노트-개발기-d50019d42041)
