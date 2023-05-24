@@ -7,7 +7,7 @@ pin: false
 math: false
 mermaid: false
 image:
-  path: https://velog.velcdn.com/images/ypjun100/post/4965eaba-e7d7-468c-ba81-54cfc2dad0d4/image.gif
+  path: /imgs/2023-03-31/thumbnail.gif
   alt:
 ---
 
@@ -31,7 +31,7 @@ image:
 
 설명의 용이성을 위해 프로젝트의 주요 기능과 함께 과정을 살펴보도록 하겠습니다.
 ### 1. 파동 방정식
-![](https://velog.velcdn.com/images/ypjun100/post/08056ef5-2f76-4baf-81c4-4a6699c0b6d8/image.png)
+![](/imgs/2023-03-31/wave-equation.png)
 _<a href="https://kr.mathworks.com/matlabcentral/fileexchange/59915-simple-wave-equation-solver">https://kr.mathworks.com/matlabcentral/fileexchange/59915-simple-wave-equation-solver</a>_
 
 🙈 _물리학과 분들은 괜찮을지 몰라도, 저는 아니에요..._ 🙈
@@ -43,30 +43,30 @@ _<a href="https://kr.mathworks.com/matlabcentral/fileexchange/59915-simple-wave-
 그렇기 때문에 Sine 함수를 이용해서 특정 인덱스의 파동 높이 값을 부드럽게 하강할 수 있도록 구현함으로써 자연스러운 파동을 유도할 수 있었습니다. 또한, 타이머 시작시 발생하는 파동 애니메이션을 구현하기 위해서도 Sine 함수를 이용하였습니다.
 
 ### 2. Pixi.js를 이용한 배경
-![](https://velog.velcdn.com/images/ypjun100/post/0a15e2f4-5fa6-4f42-98ca-3a54a2f62611/image.png)
+![](/imgs/2023-03-31/mix-blend.png)
 _얘가 범인이에요..._
 
 원래 파동 애니메이션은 html의 canvas 위에서 자바스크립트 코드를 이용해 직접 그리는 방식을 이용하였습니다. 하지만, 파동과 타이머의 글씨가 블렌딩되는 UI에서 문제가 발생하였습니다. 블렌딩을 하기 위해 globalCompositeOperation() 함수를 사용하였는데 Safari와 Chrome의 결과가 서로 달랐습니다. 그래서 브라우저별로 서로 다른 블렌딩 모드를 사용하도록 구현하려고 했지만 적합한 블렌딩 모드를 찾을 수 없더군요. 그래서...
-![](https://velog.velcdn.com/images/ypjun100/post/ffcc9e6c-8110-444d-ad7b-f5751e7f303c/image.png)
+![](/imgs/2023-03-31/pixijs.png)
 _구세주_
 Pixi.js를 사용하여 제작하였습니다. 제가 Pixi.js를 사용한 이유는 브라우저 간 호환성이 좋다는 점과 빠르고 가볍다는 장점때문입니다. 그리고 기존의 canvas와 사용방법이 그렇게 크지 않다는 것도 장점이었기 때문에 빠르게 파동을 구현할 수 있었습니다.<br>
 Pixi.js를 사용하면서 가장 아쉬웠던 부분은 그라디언트 부분이었습니다. 파동에 그라디언트 색상이 포함되어 있었기 때문에 이를 구현하기 위해 Pixi.js에서 그라디언트를 사용해야 했지만 Pixi.js는 그라디언트를 제공하고 있지 않았습니다.<br>
 그렇기 때문에 canvas 바깥 html에서 투명 그라디언트를 가진 엘리먼트를 추가하여 파동의 그라디언트 색상을 구현하였습니다.
 
 ### 3. 애니메이션 큐
-![](https://velog.velcdn.com/images/ypjun100/post/b22bd2fb-e3ca-44c8-8a78-a485d8830e05/image.gif)
+![](/imgs/2023-03-31/bug.gif)
 _연진아 나 지금 되게 신나_
 
 위 사진은 wavetimer의 초기 버전입니다. 사진 상의 문제점은 비동기 요청에 의해 파동이 특정 위치로 움직이는데, 이때 비동기 요청 두 개가 동시에 들어오면, 한 요청은 파동을 위로 보낼려고 하지만 다른 한 요청은 파동을 아래로 보낼려고 하여 두 요청이 서로 엇갈리는 상태입니다. 이를 해결하기 위해 한 애니메이션이 종료되고 나서 그 뒤의 애니메이션을 처리하는 방식이 필요했기 때문에 이를 큐로 구현하였습니다.
 
-![](https://velog.velcdn.com/images/ypjun100/post/09f4d840-2db5-4c20-940a-2e279545ec52/image.png)
+![](/imgs/2023-03-31/animate-queue.png)
 _wave-anitmate.js 中_
 
 위 파일에서 **WaveAnimate** 클래스는 애니메이션 요청을 정의합니다. 이 클래스에서 파동이 어디로 이동해야하는지를 정의합니다.
 그리고 **WaveAnimateQueue** 클래스는 애니메이션 큐를 가지고 있습니다. 매 0.1초마다 현재 진행중인 애니메이션의 상태를 확인하고, 만약 애니메이션이 끝났으면 큐의 첫 번째 요소를 빼내는 형태로 구현되어 있습니다. 이와 같이 구현하여 두 애니메이션이 동시에 시행될 수 없도록 합니다.
 
 ### 4. 집중 타임/휴식 타임
-![](https://velog.velcdn.com/images/ypjun100/post/c01a6f63-fdcb-463e-99ee-0142fcf43115/image.png)
+![](/imgs/2023-03-31/timer-and-break-mode.png)
 _timer-ui.js 中_
 
 타이머는 [Pomodoro](https://www.youtube.com/results?search_query=pomodoro+50+10)와 같이 집중 타임이 끝나면 휴식 타임을 가지도록 설계하였습니다. 그렇기 때문에 집중 시간이 끝나면 자동으로 휴식 타이머로 변경되도록 구현이 필요했는데요. 따라서 위 두 변수를 가지고 타이머가 완료되고 초기화될 때 현재 breakMode가 참인가 거짓인가에 따라 타이머 모드를 구분하여 타이머를 변경하는 방식으로 구현하였습니다.
@@ -82,7 +82,7 @@ _하지만 언제나 그랬듯이 트릭은 존재합니다._
 wavetimer의 경우에도 타이머 종료 사운드를 듣기 위해서 사용자가 반드시 트리거해야하는 버튼이 있습니다. 바로 'start' 버튼 이죠. 타이머 종료 사운드를 들으려면 타이머가 시작되어야 하고, 타이머가 시작되기 위해서는 사용자가 'start' 버튼을 눌러야 합니다. 그렇기 때문에 사용자가 'start' 버튼을 누를 때 Blank 사운드를 재생시키고, 타이머가 종료될 때는 원래대로 종료 사운드를 재생시키면 사파리에서도 종료 사운드를 들을 수 있습니다.
 
 ### 6. 라이트/다크 테마
-![](https://velog.velcdn.com/images/ypjun100/post/83430d52-152d-4d6f-aa87-ba2d04056710/image.gif)
+![](/imgs/2023-03-31/light-and-dark-theme.gif)
 테마 기능은 다행히도(?) 제가 생각한 방향 그대로 구현할 수 있었습니다. 사실 테마 기능은 디자인할 때가 가장 어려웠던 것 같네요.
 
 ## 주관적 후기
@@ -92,13 +92,13 @@ wavetimer 프로젝트를 시작하기 전까지만 해도 _'이게 과연 될�
 개발을 시작하기 전 앞서 오늘 개발해야 할 기능들을 쫙 나열하여 작성하고 이를 완성할 때마다 해당 줄을 삭제하여 완료됨을 표시하였습니다. 하지만 아쉬웠던 것은 매일 새 Todo 리스트를 작성할 때 이전에 메모한 리스트를 삭제하고 새로 작성했기 때문에 이전의 리스트를 확인할 수 없었다는 점입니다. 그래서 다음 진행할 프로젝트부터는 이를 감안하여 Todo 리스트를 관리해주는 서비스를 이용해 볼 것 같네요.
 
 ### 2. 유연한 코드
-![](https://velog.velcdn.com/images/ypjun100/post/ff3e6a70-37eb-471c-b3c0-28add2e5c616/image.png)
+![](/imgs/2023-03-31/timer-ui-js.png)
 _timer-ui.js 中_
 
 작년 [오목AI](https://github.com/ypjun100/gomoku-ai)을 개발하고 거진 3달 만에 코드를 작성한 것이기 때문에, 코드를 작성할 때 더 생각하고 조심하게 코드를 작성한 것 같습니다. 그러다 보니 프로젝트의 구조에 대해 생각하게 되면서 나중에 어떤 변수와 함수들이 필요하겠구나를 미리 생각할 수 있었고 이를 코드에 반영할 수 있었습니다. 그리고 유연한 코드 덕분에 나중에 코드를 작성할 때도 과거에 작성한 코드들을 고칠필요 없이 순조롭게 진행할 수 있었습니다.
 
 ### 3. 변경사항은 수시로 깃헙에 커밋 앤 푸시
-![](https://velog.velcdn.com/images/ypjun100/post/4bea305b-df7a-46db-ba21-2d0fe0cf7659/image.png)
+![](/imgs/2023-03-31/github.png)
 _우리집 잔디_
 
 이전에 프로젝트를 진행할 때는 큰 기능을 추가했을 때만 깃헙에 푸시하였는데, 그러다 보니 기능을 추가하면서 대대적으로 삭제하거나 변경한 코드들을 한눈에 보기가 어려웠습니다. 그래서 이번 프로젝트부터는 작은 단위의 기능들을 추가할 때마다 수시로 깃헙에 푸시를 하여 이를 방지하였습니다.
