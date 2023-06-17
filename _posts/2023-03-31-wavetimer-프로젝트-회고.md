@@ -2,7 +2,7 @@
 title: wavetimer 프로젝트 회고
 date: 2023-03-31 11:33:00 +0900
 categories: [프로젝트 회고]
-tags: [wavetimer, React.js]
+tags: [React.js]
 pin: false
 math: false
 mermaid: false
