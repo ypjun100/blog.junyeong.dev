@@ -1,7 +1,7 @@
 ---
 title: Apple PencilKit Framework에 대한 고찰
 date: 2023-05-15 20:55:00 +0800
-categories: [고찰시리즈, Apple OS]
+categories: [고찰시리즈, UIKit]
 tags: [Swift]
 pin: false
 math: false

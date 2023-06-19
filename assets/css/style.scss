@@ -249,6 +249,12 @@ footer {
     margin-left: 0 !important;
 }
 
+@media (max-width: 576px) {
+    .post-tail-bottom {
+        flex-wrap: wrap !important;
+    }
+}
+
 @media (min-width: 768px) {
     .pl-md-2 {
         padding-left: 0 !important;
