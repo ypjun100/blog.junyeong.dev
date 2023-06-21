@@ -253,6 +253,10 @@ footer {
     .post-tail-bottom {
         flex-wrap: wrap !important;
     }
+
+    .code-header span::after {
+        content: '';
+    }
 }
 
 @media (min-width: 768px) {
