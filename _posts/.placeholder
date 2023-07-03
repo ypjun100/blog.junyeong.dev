@@ -1,13 +1,14 @@
 ---
 title: 
 date: 2019-08-08 11:33:00 +0900
-categories: [Blogging, Demo]
-tags: [typography]
-pin: true
-math: true
-mermaid: true
+categories: []
+tags: []
+pin: false
+math: false
+mermaid: false
 image:
   path: /commons/devices-mockup.png
   lqip:
   alt:
 ---
+<style>s{text-decoration:none; color: orange;}</style>
