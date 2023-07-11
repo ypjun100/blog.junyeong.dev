@@ -70,7 +70,7 @@ layout: page
   <hr>
   {% for post in posts %}
     <div class="card post-preview">
-      <a href="{{ post.url | relative_url }}">
+      <a class="card-container" href="{{ post.url | relative_url }}">
         <div class="card-body">
           <h1 class="card-title">
             {{ post.title }}
@@ -110,6 +110,18 @@ layout: page
           </div>
           <!-- .post-meta -->
         </div>
+        {% if post.image %}
+          <div class="card-image">
+          {% assign src = post.image.path | default: post.image %}
+          {% unless src contains '//' %}
+            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
+
+          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+
+          <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+          </div>
+        {% endif %}
       </a>
     </div>
     <!-- .post-review -->
