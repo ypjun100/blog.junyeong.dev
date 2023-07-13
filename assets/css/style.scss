@@ -188,7 +188,12 @@ body {
     } /* ul */
 }
 
+.row {
+    justify-content: center;
+}
+
 #post-list {
+    padding-right: 0;
     .post-preview {
         border: 1px solid rgb(122 122 122 / 10%);
         background: #8e8e8e08;
@@ -260,6 +265,14 @@ body {
 
     ul {
         font-size: .9rem;
+
+        li a {
+            padding-left: 1rem;
+        }
+
+        ul a {
+            padding-left: 1.8rem;
+        }
     }
     .panel-heading {
         display: none;
@@ -267,7 +280,10 @@ body {
 }
 
 #panel-wrapper {
+    position: fixed;
+    left: calc(50vw + 440px);
     padding-left: 0 !important;
+    padding-right: 20px;
 }
 
 footer {
@@ -285,8 +301,13 @@ footer {
 }
 
 @media (min-width: 768px) {
+    #main {
+        max-width: 849px;
+    }
+    
     .pl-md-2 {
         padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
 
@@ -320,8 +341,12 @@ footer {
 }
 
 @media (min-width: 850px) {
+    .post-content {
+        font-size: 1.1rem;
+    }
+
     #main-wrapper, footer {
-        margin-left: 20%;
+        margin-left: 0;
     }
 
     #topbar-title-custom {
@@ -330,18 +355,19 @@ footer {
 }
 
 @media (min-width: 850px) and (max-width: 991px) {
+    #topbar {
+        max-width: 960px;
+    }
+
     #main-wrapper, footer {
         margin-left: 0;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .post-content {
-        font-size: 1.1rem;
-    }
-
     #main .col-lg-11 {
-        max-width: 800px;
+        max-width: 992px;
+        flex: 0 0 100%;
     }
 
     #main-wrapper {
@@ -349,26 +375,43 @@ footer {
     }
 }
 
-@media (min-width: 1200px) {
-    .post-content {
-        font-size: 1.1rem;
-    }
-    
+@media (min-width: 1200px) {    
     #search-wrapper {
         margin-right: 0;
     }
 
     .pl-xl-4 {
-        padding-left: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .pr-xl-4 {
+        max-width: 850px !important;
     }
 
     .col-xl-3 {
-        max-width: 20%;
+        width: 16%;
+        max-width: 250px;
     }
 }
 
 @media (min-width: 1200px) {
+    .pr-xl-4 {
+        padding-right: 15px !important;
+    }
+
     .col-xl-9 {
-        max-width: 80%;
+        max-width: 800px;
+        flex: 0 0 100%;
+    }
+}
+
+@media (min-width: 1650px) {
+    #core-wrapper, #tail-wrapper {
+        padding-right: 15px !important;
+    }
+
+    #back-to-top {
+        right: calc((100vw - 260px - 1140px)/2 + 3rem);
     }
 }
