@@ -194,6 +194,7 @@ body {
 
 #post-list {
     padding-right: 0;
+
     .post-preview {
         border: 1px solid rgb(122 122 122 / 10%);
         background: #8e8e8e08;
@@ -211,13 +212,15 @@ body {
         .card-image {
             padding: 0;
             min-width: 141px;
+            overflow: hidden;
+            border-radius: 0 0.75rem 0.75rem 0;
 
             img {
                 max-width: 141px;
                 min-height: 100%;
                 object-fit: cover;
-                border-radius: 0 0.75rem 0.75rem 0;
                 background-color: #1b1b1e;
+                transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
 
@@ -241,6 +244,10 @@ body {
 
     .post-preview:hover {
         background: #3a3a3a4f;
+    }
+
+    .post-preview:hover .card-image img {
+        transform: scale(1.1);
     }
 
     .introduction {
@@ -413,5 +420,13 @@ footer {
 
     #back-to-top {
         right: calc((100vw - 260px - 1140px)/2 + 3rem);
+    }
+
+    #panel-wrapper {
+        left: calc(50vw + 490px) !important;
+    }
+
+    .pr-xl-4 {
+        max-width: 950px !important;
     }
 }
