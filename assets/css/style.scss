@@ -288,7 +288,7 @@ body {
 
 #panel-wrapper {
     position: fixed;
-    left: calc(50vw + 440px);
+    left: calc(50vw + 420px);
     padding-left: 0 !important;
     padding-right: 20px;
 }
@@ -417,16 +417,19 @@ footer {
     #core-wrapper, #tail-wrapper {
         padding-right: 15px !important;
     }
+//     #core-wrapper, #tail-wrapper {
+//         padding-right: 15px !important;
+//     }
 
-    #back-to-top {
-        right: calc((100vw - 260px - 1140px)/2 + 3rem);
-    }
+//     #back-to-top {
+//         right: calc((100vw - 260px - 1140px)/2 + 3rem);
+//     }
 
-    #panel-wrapper {
-        left: calc(50vw + 490px) !important;
-    }
+//     #panel-wrapper {
+//         left: calc(50vw + 490px) !important;
+//     }
 
-    .pr-xl-4 {
-        max-width: 950px !important;
-    }
+//     .pr-xl-4 {
+//         max-width: 950px !important;
+//     }
 }
