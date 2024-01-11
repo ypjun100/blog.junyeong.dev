@@ -25,11 +25,24 @@ layout: compress
     {% include topbar.html %}
 
     <div id="main-wrapper" class="d-flex justify-content-center">
-      <div id="main" class="container pl-xl-4 pr-xl-4">
-        {{ content }}
-      </div>
-      {% include search-results.html %}
+      <div id="main-sub-wrapper">
+        <div id="main" class="container pl-xl-4 pr-xl-4">
+          {{ content }}
+        </div>
+        <!-- panel -->
+        <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
+          <div class="access">
+            {% include update-list.html %}
+            {% include trending-tags.html %}
+          </div>
 
+          {% for _include in layout.panel_includes %}
+            {% assign _include_path = _include | append: '.html' %}
+            {% include {{ _include_path }} %}
+          {% endfor %}
+        </div>
+        {% include search-results.html %}
+      </div>
     </div>
 
     {% include footer.html %}
