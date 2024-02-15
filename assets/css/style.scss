@@ -236,6 +236,7 @@ body {
             padding: 0;
             min-width: 141px;
             overflow: hidden;
+            max-height: 145px;
 
             img {
                 max-width: 141px;
@@ -322,6 +323,10 @@ footer {
     margin-left: 0 !important;
 }
 
+.img-link {
+    cursor: zoom-in;
+}
+
 @media (max-width: 576px) {
     .post-tail-bottom {
         flex-wrap: wrap !important;
@@ -385,6 +390,7 @@ footer {
 
             .card-image {
                 padding: 0 !important;
+                max-height: 100% !important;
 
                 img {
                     width: 100% !important;
