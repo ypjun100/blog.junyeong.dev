@@ -8,7 +8,7 @@ math: false
 mermaid: false
 ---
 
-<style>s{text-decoration:none; color: orange;} header{font-family: Lato,'Microsoft Yahei',sans-serif; color: #cccccc; font-weight: bold; font-size: 1.5rem;}</style>
+<style>s{text-decoration: none;background: #ffd00066;border-radius: 4px;padding: 2px;}</style>
 
 #### 요약
 * 기존 HTTP 통신은 클라이언트가 서버로 요청을 보내야만 서버로부터 응답이 돌아오는 단방향 통신이다.
