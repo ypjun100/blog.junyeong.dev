@@ -11,4 +11,4 @@ image:
   lqip:
   alt:
 ---
-<style>s{text-decoration:none; color: orange;}</style>
+<style>s{text-decoration: none;background: #ffd00066;border-radius: 4px;padding: 2px;}</style>
