@@ -27,5 +27,8 @@ if RUBY_PLATFORM =~ /linux-musl/
   gem "jekyll-sass-converter", "~> 2.0"
 end
 
-# sitemap
+# Sitemap
 gem 'jekyll-sitemap'
+
+# For search engine optimization
+gem "jekyll-seo-tag"
