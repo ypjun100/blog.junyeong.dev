@@ -1,8 +1,8 @@
 ---
 title: WebSocket에 대한 고찰
 date: 2023-07-03 15:26:00 +0900
-categories: [고찰시리즈, Spring]
-tags: [Spring]
+categories: [고찰시리즈, 네트워크 및 통신]
+tags: [네트워크 및 통신]
 pin: false
 math: false
 mermaid: false
