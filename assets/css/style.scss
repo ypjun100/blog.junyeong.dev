@@ -329,6 +329,32 @@ footer {
     cursor: zoom-in;
 }
 
+.nameplate {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--text-color);
+
+    .profile-image {
+        width: 6.25rem;
+        height: 6.25rem;
+        border-radius: 100%;
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .profile-name {
+            margin: 0 !important;
+        }
+
+        .profile-role {
+            margin: 0 !important;
+        }
+    }
+}
+
 @media (max-width: 576px) {
     .post-tail-bottom {
         flex-wrap: wrap !important;
@@ -474,19 +500,4 @@ footer {
     #top-wrapper {
         max-width: auto;
     }
-//     #core-wrapper, #tail-wrapper {
-//         padding-right: 15px !important;
-//     }
-
-//     #back-to-top {
-//         right: calc((100vw - 260px - 1140px)/2 + 3rem);
-//     }
-
-//     #panel-wrapper {
-//         left: calc(50vw + 490px) !important;
-//     }
-
-//     .pr-xl-4 {
-//         max-width: 950px !important;
-//     }
 }
